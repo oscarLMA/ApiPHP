@@ -78,7 +78,7 @@ class CategoriesController extends Controller
      */
     public function destroy(string $category)
     {
-        $category = Category($category);
+        $category = Category::find($category);
         $category ->todos()->each(function($todo){
               $todo->delete();
         });
